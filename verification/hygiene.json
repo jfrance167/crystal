@@ -1,0 +1,7 @@
+{
+  "files_reviewed": 20,
+  "python_ast": "passed",
+  "credential_pattern_findings": 0,
+  "dedicated_secret_scanner": "unavailable",
+  "scope": "new project text sources only; bounded review, not exhaustive"
+}

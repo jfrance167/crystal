@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crystal · Secret rotation lab</title>
+  <link rel="icon" href="/crystal.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to rotation controls</a>
+  <header class="masthead"><a class="brand" href="/" aria-label="Crystal home">crystal<span>SECRET ROTATION LAB</span></a><span class="lab-tag"><i aria-hidden="true"></i> LOCAL DEMO</span></header>
+  <main id="main">
+    <section class="hero" aria-labelledby="title">
+      <div><p class="eyebrow">SMALL KEYS. SHORT LIFETIMES.</p><h1 id="title">A fresh key.<br>A clear trail.</h1><p class="intro">Rotate on a schedule. Verify before you revoke.<br>See every step along the way.</p></div>
+      <div class="crystal-mark"><img src="/crystal.svg" width="180" height="180" alt=""><span class="eyebrow">CREATE / VERIFY / REVOKE</span></div>
+    </section>
+    <section class="control-panel" aria-labelledby="credential-title">
+      <div class="credential">
+        <div class="section-label"><h2 id="credential-title">01 / DEMO CREDENTIAL</h2><span id="health" class="badge">CONNECTING</span></div>
+        <div class="credential-name">demo-service<span>API KEY</span></div>
+        <p class="fingerprint">Fingerprint <code id="fingerprint">—</code></p>
+        <p class="hint">Synthetic key · Held in memory · Never shown in logs</p>
+        <div class="rotation-action"><button id="rotate" class="primary" disabled>Rotate key <span aria-hidden="true">↗</span></button><p id="last-rotation">Ready for its first rotation.</p></div>
+      </div>
+      <div class="schedule">
+        <div class="section-label"><h2>02 / SCHEDULE</h2><span id="schedule-state" class="eyebrow">—</span></div>
+        <div id="countdown" class="countdown">—<span>UNTIL NEXT ROTATION</span></div>
+        <form id="schedule-form"><label for="interval">Rotate every</label><div class="schedule-input"><select id="interval" name="interval"><option value="10">10 seconds · quick demo</option><option value="60">1 minute</option><option value="300" selected>5 minutes</option><option value="3600">1 hour</option><option value="86400">24 hours</option></select><button type="submit" class="secondary" id="save-schedule" disabled>Set interval</button></div></form>
+        <button id="toggle-schedule" class="text-button" disabled>Pause schedule</button><p class="hint">Runs while this local service is open.</p>
+      </div>
+    </section>
+    <p id="message" class="message" role="status" aria-live="polite">Connecting to the local demo…</p>
+    <section class="proof" aria-label="Rotation results"><div><span id="success-count">0</span><p>successful rotations</p></div><div><span id="active-count">—</span><p>active demo keys</p></div><div><span id="revocation-proof">—</span><p>old key after last attempt</p></div></section>
+    <section class="audit-section" aria-labelledby="audit-title"><div class="audit-header"><div><p class="eyebrow">THE RECEIPTS</p><h2 id="audit-title">Every step, accounted for.</h2></div><button id="refresh" class="secondary">Refresh trail <span aria-hidden="true">↻</span></button></div><div class="table-wrap"><table><caption class="sr-only">Latest rotation events, newest first. Times use your browser’s timezone.</caption><thead><tr><th scope="col">Time</th><th scope="col">Event</th><th scope="col">Outcome</th><th scope="col">Key fingerprint</th></tr></thead><tbody id="audit-body"><tr><td colspan="4">Your audit trail will appear here.</td></tr></tbody></table></div><p class="hint">Latest 80 events · Local time · Includes previous demo sessions</p></section>
+    <details class="failure-lab"><summary>Explore a failed rotation</summary><p>Choose a failure, then press Rotate key. Verification failures preserve the working key. Cleanup failures pause further rotation until you restart this disposable demo.</p><label for="failure">Failure for the next manual rotation</label><select id="failure"><option value="none">None · successful rotation</option><option value="candidate_check">Candidate verification fails</option><option value="consumer_check">Consumer verification fails</option><option value="old_cleanup">Old-key revocation fails</option><option value="candidate_cleanup">Verification and candidate cleanup fail</option></select></details>
+  </main>
+  <footer><span>CRYSTAL / v0.1</span><p>You learn secret rotation and audit logs.<br>Synthetic credentials only. This is a learning lab.</p><span>BUILT TO BE UNDERSTOOD.</span></footer>
+</body>
+</html>

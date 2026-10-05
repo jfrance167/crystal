@@ -1,0 +1,6 @@
+{
+  "mutation": "inverted candidate acceptance condition in memory",
+  "tests_run": 1,
+  "mutation_detected": true,
+  "source_files_modified": false
+}
