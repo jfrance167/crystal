@@ -26,4 +26,4 @@ The tests cover successful and failed transitions, real loopback old/new-key aut
 
 Jake should manually review `crystal/server.py` request authorization, `crystal/core.py` transition/cleanup policy and these limits before any future production integration or publication. Merge/deployment is not authorized by completion of local checks.
 
-Keep any report free of real keys, tokens, employer/client information or private runtime exports. No public security-reporting channel is configured because no remote repository has been published.
+Keep any report free of real keys, tokens, employer/client information or private runtime exports. This repository is published as an educational lab. Report a suspected vulnerability through a private GitHub security advisory when available; do not post credentials, private runtime data, or exploit details in a public issue. If private reporting is unavailable, request a private reporting route without including sensitive details.
